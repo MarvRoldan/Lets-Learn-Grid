@@ -1,5 +1,4 @@
 /* Let's try CSS3 Grid! */
-/* Check out this great guide: https://css-tricks.com/snippets/css/complete-guide-grid/ */
 
 * { /* Basic default browser style reset. */
     font-size: 16px;
@@ -8,25 +7,28 @@
     box-sizing: border-box;
 }
 
+/* Check out this great guide: https://css-tricks.com/snippets/css/complete-guide-grid/ */
+
 /* We need a grid container, to contain our grid items! */
 #css-grid {
     display: grid;
-    grid-template-columns: 
-        20% /* Column 1 */
-        20% /* Column 2 */
-        15% /* Column 3 */
-        15% /* Column 4 */
+    grid-template-columns:
+        20%  /* Column 1 */
+        20%  /* Column 2 */
+        15%  /* Column 3 */
+        15%  /* Column 4 */
         30%; /* Column 5 */
-    grid-template-rows: /* View Height = "vh" */
-        20vh /* Row 1 */
-        20vh /* Row 2 */
-        25vh /* Row 3 */
-        25vh /* Row 4 */
+    grid-template-rows:
+        20vh  /* Row 1 */
+        20vh  /* Row 2 */
+        25vh  /* Row 3 */
+        25vh  /* Row 4 */
         10vh; /* Row 5 */
 }
 
 /* Border so we can see our rows / columns. */
-#css-grid > * {
+
+#css-grid > * { /* Direct child selection. */
     border: 2px dashed darkgray;
 }
 
@@ -45,7 +47,7 @@
 }
 
 #hero {
-    grid-column: 2 / span 4; /* Short hand. 2 = "Start" / span 4 ="End" */
+    grid-column: 2 / span 4;
     grid-row: 2;
 }
 
@@ -55,7 +57,7 @@
     grid-row: 3;
 }
 
-/* We don't have to have to say #content-1 and #content-3 column, because bu default they are going to take up 1 cell/column */
+/* We don't have to say #content-1 and #content-3 column, because by default they are going to take up 1 cell/column. */
 
 #content-2 {
     grid-column: 3 / span 2;
@@ -63,9 +65,13 @@
 
 #big-content-1,
 #big-content-2 {
-    grid-column: span 2; /* By default, they take up one cell/row, so we did not specify row! */
+    grid-column: span 2;
+    /* By default, they take up one cell/row, so we did not specify row! */
 }
 
-#link {
+#links {
     grid-column: span 2;
 }
+
+/* Visuals (Ignore) */
+*{font-family:Arial,Helvetica,sans-serif;list-style:none;}#css-grid>*{color:#fff;padding:5%;}#logo,#info{background:lightsalmon;}#navigation,#links{color:darkgray;background:khaki;}#search,#address{background:palegreen;}#sidebar{background:cornflowerblue;}#content-1{background:plum;}#content-2{color:darkgray;background:antiquewhite;}#content-3{background:peru;}#big-content-1{background:silver;}#big-content-2{background:#5d8aa8;}#copyright,#hero{background:#a4c639;}
